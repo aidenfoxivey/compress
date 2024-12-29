@@ -53,12 +53,6 @@ pub const LZW_Dict = struct {
         }
     }
 
-    /// Put the current
-    pub fn put(self: *Self, curr_seq: std.ArrayList(u8)) void {
-        self.map.put(curr_seq, self.counter);
-        self.counter += 1;
-    }
-
     /// Given a sequence of bytes, find the corresponding code.
     pub fn get(self: *Self, curr_seq: []u8) ?CodeSize {
         return self.map.get(curr_seq);
